@@ -6,7 +6,7 @@ pipeline{
         stage('hello world'){
             steps{
              scipt{
-                
+                hello.hello()
              }
             }
         }
