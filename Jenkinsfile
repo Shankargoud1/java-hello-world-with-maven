@@ -1,22 +1,26 @@
-@Library('myLibrary') _
+@Library('MyLibrary') _
 pipeline {
     agent any
- 
     stages {
-        stage('hello world') {
+        
+        stage('Hello World') {
             steps {
-             scipt {
-                hello.hello()
-             }
+                script 
+                {
+                    helloworld.hello()
+                }
             }
         }
-
-       stage('git_checkout') {
+        
+        stage('Checkout code from Git') {
             steps {
-             scipt {
-                 checkout_git.checkout_git()
-             }
+                script 
+                {
+                    checkout_git.checkout_git()
+                }
             }
-        } 
+        }
+        
     }
+    
 }

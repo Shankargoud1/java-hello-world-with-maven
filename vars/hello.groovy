@@ -1,7 +1,7 @@
-def hello() {
-      echo "Hi this is shankar"
-        
+ def hello() {
+    echo "Hello World! Welcome to Groovy Shared Libraries class...!!"
 }
 
-
 return this
+
+ 
