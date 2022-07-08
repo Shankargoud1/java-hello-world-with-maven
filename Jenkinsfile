@@ -16,7 +16,7 @@ pipeline {
             steps {
                 script 
                 {
-                    checkout.checkout-gits()
+                    checkout.checkout-git()
                 }
             }
         }
