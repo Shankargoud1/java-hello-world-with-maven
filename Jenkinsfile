@@ -1,22 +1,15 @@
 pipeline{
     agent any
-
-    tools {
-         maven 'maven'
-         jdk 'java'
-    }
+ 
 
     stages{
-        stage('checkout'){
+        stage('hello world'){
             steps{
-                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github access', url: 'https://github.com/sreenivas449/java-hello-world-with-maven.git']]])
+             scipt{
+                
+             }
             }
         }
-        stage('build'){
-            steps{
-               bat 'mvn package'
-               sh 'echo hi'
-            }
-        }
+        
     }
 }
