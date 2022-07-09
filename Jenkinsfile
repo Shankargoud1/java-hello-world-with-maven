@@ -21,7 +21,7 @@ pipeline {
                 
                   parallel (
                 "1": {dir("java-hello-world-with-maven"){script {checkout_git.checkout_git("java-hello-world-with-maven")}}},
-                "2": {dir("mycoderepo"){script {checkout_git.checkout_git("mycoderepo")}}}
+                "2": {dir("SimpleMavenProject"){script {checkout_git.checkout_git("SimpleMavenProject")}}}
                 )
              }
         }                                
