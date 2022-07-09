@@ -13,19 +13,31 @@ pipeline {
         }
         
         stage('Checkout code from Git') {
-            steps {
+            steps { 
+                dir("java-hello-world-with-maven")
                 script 
                 {
-                    checkout_git.checkout_git()
+                    checkout_git.checkout_git("java-hello-world-with-maven")
                 }
             }
         }
         
-        stage('triggering awscodebuild') {
+        
+        stage('Maven Build') {
             steps {
                 script 
                 {
-                     awscodebuild.awscodebuild()
+                    maven_build.maven_build()
+                }
+            }
+
+
+        stage('triggering awscodebuild') {
+            steps {
+                dir("java-hello-world-with-maven")
+                script 
+                {
+                     awscodebuild.awscodebuild(java-project-2)
                 }
             }
         }
