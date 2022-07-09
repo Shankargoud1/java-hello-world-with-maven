@@ -1,48 +1,47 @@
-@Library('myLibrary') _
+ 
+@Library('MyLibrary') _
 pipeline {
     agent any
+    tools {
+        maven "Maven"
+    }
     stages {
         
         stage('Hello World') {
             steps {
                 script 
                 {
-                    hello.hello()
-                }
-            }
-        }
-        
-        stage('Checkout code from Git') {
-            steps { 
-                dir("java-hello-world-with-maven")
-                script 
-                {
-                    checkout_git.checkout_git("java-hello-world-with-maven")
-                }
-            }
-        }
-        
-        
-        stage('Maven Build') {
-            steps {
-                script 
-                {
-                    maven_build.maven_build()
+                    helloworld.hello()
                 }
             }
         }
 
-        stage('triggering awscodebuild') {
+        stage('Checkout code from Git') {
+            steps {
+               
+                dir("java-hello-world-with-maven")
+                
+                    script {
+                        checkout_git.checkout_git("java-hello-world-with-maven")
+                           }
+                        }
+                  }                                
+            }
+        
+        
+        stage('Trigger AWS Code Build') {
             steps {
                 dir("java-hello-world-with-maven")
+                {
                 script 
                 {
-                     awscodebuild.awscodebuild(java-project-2)
+                    awscodebuild.awscodebuild("java-project-2")
+                }
                 }
             }
         }
     }
-
+    }                
 
 post {
         
