@@ -26,22 +26,23 @@ pipeline {
                            }
                         }
                   }                                
-            }
+            
         
         
         stage('Trigger AWS Code Build') {
             steps {
                 dir("java-hello-world-with-maven")
-                {
-                script 
-                {
+                
+                script {
+                
                     awscodebuild.awscodebuild("java-project-2")
+                    }
                 }
                 }
-            }
+            
         }
     }
-    }                
+                   
 
 post {
         
