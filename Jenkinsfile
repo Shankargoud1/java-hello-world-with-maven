@@ -30,7 +30,7 @@ pipeline {
                     maven_build.maven_build()
                 }
             }
-
+        }
 
         stage('triggering awscodebuild') {
             steps {
