@@ -19,8 +19,7 @@ pipeline {
             steps {
                
                 
-                
-                    script {
+                 script {
                         dir("java-hello-world-with-maven")
                         {checkout_git.checkout_git("java-hello-world-with-maven")}
                      }
@@ -31,10 +30,9 @@ pipeline {
         
         stage('Trigger AWS Code Build') {
             steps {
-                dir("java-hello-world-with-maven")
-                
+                                 
                 script {
-                dir("java-hello-world-with-maven")
+                  dir("java-hello-world-with-maven")
                     {awscodebuild.awscodebuild("java-project-2")}
                 }
              }
