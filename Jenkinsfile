@@ -1,8 +1,8 @@
- @Library('MyLibrary') _
+ @Library('myLibrary') _
 pipeline {
     agent any
     tools {
-        maven "Maven"
+        maven "maven"
     }
     stages {
         
