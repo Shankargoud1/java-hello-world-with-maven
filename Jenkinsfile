@@ -1,5 +1,4 @@
- 
-@Library('MyLibrary') _
+ @Library('MyLibrary') _
 pipeline {
     agent any
     tools {
@@ -23,9 +22,9 @@ pipeline {
                 
                     script {
                         checkout_git.checkout_git("java-hello-world-with-maven")
-                           }
-                        }
-                  }                                
+                     }
+             }
+        }                                
             
         
         
@@ -36,12 +35,12 @@ pipeline {
                 script {
                 
                     awscodebuild.awscodebuild("java-project-2")
-                    }
                 }
-                }
-            
+             }
         }
+            
     }
+    
                    
 
 post {
