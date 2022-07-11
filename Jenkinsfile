@@ -20,8 +20,8 @@ pipeline {
                
                 
                   parallel (
-                "1": {dir("java-hello-world-with-maven"){script {checkout_git.checkout_git("java-hello-world-with-maven")}}},
-                "2": {dir(" sparkjava-war-example"){script {checkout_git.checkout_git("sparkjava-war-example")}}}
+                 
+                 {dir("sparkjava-war-example"){script {checkout_git.checkout_git("sparkjava-war-example")}}}
                 )
              }
         }                                
@@ -32,7 +32,7 @@ pipeline {
             steps {
                                  
                 script {
-                  dir("java-hello-world-with-maven")
+                  dir("sparkjava-war-example")
                     {awscodebuild.awscodebuild("java-project-2")}
                 }
              }
