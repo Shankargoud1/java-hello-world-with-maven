@@ -28,9 +28,9 @@ pipeline {
 
         stage('Trigger AWS Code Build') {
             steps {
-                     {script    
+                     script    
                    
-                 {dir("sparkjava-war-example"){awscodebuild.awscodebuild("java-project-2")}}}
+                 {dir("sparkjava-war-example"){awscodebuild.awscodebuild("java-project-2")}}
                 
              }
         }
