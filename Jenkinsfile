@@ -30,7 +30,7 @@ pipeline {
             steps {
                          
                 script {
-                    {dir("java-hello-world-with-maven"){awscodebuild.awscodebuild("java-project-2")}}
+                    awscodebuild.awscodebuild("java-project-2")
                 }
              }
         }
