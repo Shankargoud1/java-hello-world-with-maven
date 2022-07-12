@@ -26,8 +26,7 @@ pipeline {
          
              }
         }                                
-        
-        
+                
         stage('Trigger AWS Code Build') {
             steps {
                                  
