@@ -28,11 +28,10 @@ pipeline {
 
         stage('Trigger AWS Code Build') {
             steps {
-                         
-                   parallel (
-                "1": {dir("java-hello-world-with-maven"){script {awscodebuild.awscodebuild("java-project-2")}}},
-                "2": {dir("sparkjava-war-example"){script {awscodebuild.awscodebuild("java-project-2")}}}
-                )
+                     {script    
+                   
+                 {dir("sparkjava-war-example"){awscodebuild.awscodebuild("java-project-2")}}}
+                
              }
         }
             
