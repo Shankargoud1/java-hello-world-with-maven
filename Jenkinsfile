@@ -27,13 +27,13 @@ pipeline {
              }
         }                                
         }
-               
+
         stage('Trigger AWS Code Build') {
             steps {
                                  
                 script {
-                  dir("sparkjava-war-example")
-                    {awscodebuild.awscodebuild("java-project-2")}
+                  
+                    awscodebuild.awscodebuild("java-project-2")
                 }
              }
         }
