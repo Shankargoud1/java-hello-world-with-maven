@@ -28,7 +28,7 @@ pipeline {
 
         stage('Trigger AWS Code Build') {
             steps {
-                                 
+                dir("java-hello-world-with-maven")          
                 script {
                   
                     awscodebuild.awscodebuild("java-project-2")
