@@ -18,13 +18,11 @@ pipeline {
         stage('Checkout code from Git') {
             steps {
                 
-                 script {
-                     
-                     checkout_git.checkout_git("sparkjava-war-example")
-                     
-                     
-         
-             }
+                   parallel (
+                "1": {dir("java-hello-world-with-maven"){script {checkout_git.checkout_git("java-hello-world-with-maven")}}},
+                "2": {dir("sparkjava-war-example"){script {checkout_git.checkout_git("sparkjava-war-example")}}}
+                )
+             
         }                                
         }
 
