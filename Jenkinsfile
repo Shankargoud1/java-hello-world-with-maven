@@ -20,7 +20,7 @@ pipeline {
                 
                   
                  
-                 script {dir("sparkjava-war-example") {checkout_git.checkout_git("sparkjava-war-example")}}
+                 script {checkout_git.checkout_git("sparkjava-war-example")}
                 
              
         }                                
