@@ -11,7 +11,7 @@ pipeline {
                 script 
                 {
                     hello.hello()
-                }
+                }  
             }
         }
 
