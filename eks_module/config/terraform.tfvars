@@ -1,4 +1,3 @@
-
 aws_eks_cluster_config = {
 
       "demo-cluster" = {
