@@ -138,6 +138,7 @@ pipeline{
                 script{
 
                     dir('eks_module') {
+    
                       sh """
                           
                           terraform init 
