@@ -13,7 +13,7 @@ pipeline {
         stage('checkout') {
             steps {
                  script{
-                        dir("terraform")
+                        dir("eks_module")
                         {
                             git "git@github.com:Shankargoud1/java-hello-world-with-maven.git"
                         }
